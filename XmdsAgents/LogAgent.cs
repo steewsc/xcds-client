@@ -80,7 +80,7 @@ namespace XiboClient.XmdsAgents
                         using (xmds.xmds xmds = new xmds.xmds())
                         {
                             xmds.Credentials = null;
-                            xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=submitLog";
+                            xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=submitLog";
                             xmds.UseDefaultCredentials = false;
 
                             // Log

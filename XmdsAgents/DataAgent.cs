@@ -148,7 +148,7 @@ namespace XiboClient.XmdsAgents
                                     xmds.Credentials = null;
                                     xmds.UseDefaultCredentials = true;
 
-                                    xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=getData";
+                                    xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=getData";
                                     string result = xmds.GetData(ApplicationSettings.Default.ServerKey, ApplicationSettings.Default.HardwareKey, widget.WidgetId);
 
                                     // Write the result to disk

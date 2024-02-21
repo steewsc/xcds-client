@@ -69,7 +69,7 @@ namespace XiboClient
 
             ExcludedProperties = new List<string>();
             ExcludedProperties.Add("Default");
-            ExcludedProperties.Add("XiboClient_xmds_xmds");
+            ExcludedProperties.Add("XCDSClient_xmds_xmds");
             ExcludedProperties.Add("ClientVersion");
             ExcludedProperties.Add("Version");
             ExcludedProperties.Add("ClientCodeVersion");
@@ -417,7 +417,7 @@ namespace XiboClient
         /// <summary>
         /// XMDS Url configuration
         /// </summary>
-        public string XiboClient_xmds_xmds
+        public string XCDSClient_xmds_xmds
         {
             get
             {

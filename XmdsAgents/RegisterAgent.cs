@@ -90,7 +90,7 @@ namespace XiboClient.XmdsAgents
                         using (xmds.xmds xmds = new xmds.xmds())
                         {
                             xmds.Credentials = null;
-                            xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=registerDisplay";
+                            xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=registerDisplay";
                             xmds.UseDefaultCredentials = false;
 
                             // Store the XMR address
@@ -139,7 +139,7 @@ namespace XiboClient.XmdsAgents
                                 // Try it and see.
                                 try
                                 {
-                                    xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=registerDisplay";
+                                    xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=registerDisplay";
                                     string xml = callRegister(xmds, key);
 
                                     // If that worked (no errors), update our settings
@@ -170,7 +170,7 @@ namespace XiboClient.XmdsAgents
                                 // Try it and see.
                                 try
                                 {
-                                    string url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=registerDisplay";
+                                    string url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=registerDisplay";
                                     xmds.Url = url.Replace("http://", "https://");
                                     callRegister(xmds, key);
 
@@ -392,7 +392,7 @@ namespace XiboClient.XmdsAgents
                 using (xmds.xmds xmds = new xmds.xmds())
                 {
                     xmds.Credentials = null;
-                    xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=notifyStatus";
+                    xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=notifyStatus";
                     xmds.UseDefaultCredentials = false;
                     xmds.NotifyStatusAsync(ApplicationSettings.Default.ServerKey, ApplicationSettings.Default.HardwareKey, sb.ToString());
                 }

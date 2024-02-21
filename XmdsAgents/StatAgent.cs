@@ -76,7 +76,7 @@ namespace XiboClient.XmdsAgents
                             using (xmds.xmds xmds = new xmds.xmds())
                             {
                                 xmds.Credentials = null;
-                                xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=submitStats";
+                                xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=submitStats";
                                 xmds.UseDefaultCredentials = false;
 
                                 // Get the starts we've marked to process as XML.

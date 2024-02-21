@@ -277,7 +277,7 @@ namespace XiboClient.Rendering
         private void RefreshFromXmds()
         {
             xmds.xmds xmds = new XiboClient.xmds.xmds();
-            xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=getResource";
+            xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=getResource";
             xmds.GetResourceCompleted += new XiboClient.xmds.GetResourceCompletedEventHandler(xmds_GetResourceCompleted);
 
             xmds.GetResourceAsync(ApplicationSettings.Default.ServerKey, ApplicationSettings.Default.HardwareKey, Options.layoutId, Options.regionId, Options.mediaid, ApplicationSettings.Default.Version);

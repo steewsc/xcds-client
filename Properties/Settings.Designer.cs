@@ -27,9 +27,9 @@ namespace XiboClient.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/xmds.php?v=7")]
-        public string XiboClient_xmds_xmds {
+        public string XCDSClient_xmds_xmds {
             get {
-                return ((string)(this["XiboClient_xmds_xmds"]));
+                return ((string)(this["XCDSClient_xmds_xmds"]));
             }
         }
     }

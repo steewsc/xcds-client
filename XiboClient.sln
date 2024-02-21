@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiboClient", "XiboClient.csproj", "{88215F84-47F4-4A74-B413-BC3A1443A538}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupXCDS", "..\SetupXCDS\SetupXCDS.vdproj", "{C2B46051-2D61-48B4-BE01-CFC32D403611}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiboClientWatchdog", "..\watchdog\XiboClientWatchdog.csproj", "{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{04B1B14D-9CC8-46B2-9EBC-6329CD0F0BEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +27,18 @@ Global
 		{88215F84-47F4-4A74-B413-BC3A1443A538}.Release|x86.ActiveCfg = Release|x86
 		{88215F84-47F4-4A74-B413-BC3A1443A538}.Release|x86.Build.0 = Release|x86
 		{88215F84-47F4-4A74-B413-BC3A1443A538}.Release|x86.Deploy.0 = Release|x86
-		{C2B46051-2D61-48B4-BE01-CFC32D403611}.Debug|Any CPU.ActiveCfg = Debug
-		{C2B46051-2D61-48B4-BE01-CFC32D403611}.Debug|x86.ActiveCfg = Debug
-		{C2B46051-2D61-48B4-BE01-CFC32D403611}.Release|Any CPU.ActiveCfg = Release
-		{C2B46051-2D61-48B4-BE01-CFC32D403611}.Release|x86.ActiveCfg = Release
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Debug|x86.ActiveCfg = Debug|x86
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Debug|x86.Build.0 = Debug|x86
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Release|x86.ActiveCfg = Release|x86
+		{7C5DE0A1-D6BE-4FAE-AE24-30C0B8276469}.Release|x86.Build.0 = Release|x86
+		{04B1B14D-9CC8-46B2-9EBC-6329CD0F0BEA}.Debug|Any CPU.ActiveCfg = Debug
+		{04B1B14D-9CC8-46B2-9EBC-6329CD0F0BEA}.Debug|x86.ActiveCfg = Debug
+		{04B1B14D-9CC8-46B2-9EBC-6329CD0F0BEA}.Release|Any CPU.ActiveCfg = Release
+		{04B1B14D-9CC8-46B2-9EBC-6329CD0F0BEA}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

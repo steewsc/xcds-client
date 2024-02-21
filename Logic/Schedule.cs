@@ -116,7 +116,7 @@ namespace XiboClient
         /// <param name="scheduleLocation"></param>
         public Schedule(string scheduleLocation)
         {
-            Trace.WriteLine(string.Format("XMDS Location: {0}", ApplicationSettings.Default.XiboClient_xmds_xmds));
+            Trace.WriteLine(string.Format("XMDS Location: {0}", ApplicationSettings.Default.XCDSClient_xmds_xmds));
 
             // Get the key for this display
             _hardwareKey = new HardwareKey();

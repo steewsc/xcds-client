@@ -202,7 +202,7 @@ namespace XiboClient.XmdsAgents
                                 using (xmds.xmds xmds = new xmds.xmds())
                                 {
                                     xmds.Credentials = null;
-                                    xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=requiredFiles";
+                                    xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=requiredFiles";
                                     xmds.UseDefaultCredentials = false;
 
                                     // Get required files from XMDS
@@ -544,12 +544,12 @@ namespace XiboClient.XmdsAgents
 
                 Trace.WriteLine(new LogMessage("ScheduleAgent - Run", "Thread Woken and Lock Obtained"), LogType.Audit.ToString());
 
-                ClientInfo.Instance.ScheduleStatus = "Running: Get Data from Xibo Server";
+                ClientInfo.Instance.ScheduleStatus = "Running: Get Data from XCDS Server";
 
                 using (xmds.xmds xmds = new xmds.xmds())
                 {
                     xmds.Credentials = null;
-                    xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=schedule";
+                    xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=schedule";
                     xmds.UseDefaultCredentials = false;
 
                     string scheduleXml = xmds.Schedule(ApplicationSettings.Default.ServerKey, _hardwareKey);

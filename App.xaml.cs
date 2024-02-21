@@ -161,7 +161,7 @@ namespace XiboClient
                     {
                         if (!EventLog.SourceExists(productName))
                         {
-                            EventLog.CreateEventSource(productName, "Xibo");
+                            EventLog.CreateEventSource(productName, "XCDS");
                         }
 
                         EventLog.WriteEntry(productName, e.ToString(), EventLogEntryType.Error);

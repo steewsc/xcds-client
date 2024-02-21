@@ -8,6 +8,8 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>XiboClient</RootNamespace>
     <AssemblyName>XiboClient</AssemblyName>
+    <Product>XCDS</Product>
+    <ProductName>XCDS</ProductName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -295,7 +297,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>XiboClient_xmds_xmds</CachedSettingsPropName>
+      <CachedSettingsPropName>XCDSClient_xmds_xmds</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
@@ -368,7 +370,10 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo F|xcopy /Y "$(TargetPath)" "$(TargetDir)Xibo.scr"
-echo F|xcopy /Y "$(TargetDir)XiboClient.exe.config" "$(TargetDir)Xibo.scr.config"</PostBuildEvent>
+    <PostBuildEvent>echo F|xcopy /Y "$(TargetPath)" "$(TargetDir)XCDSClient.exe"
+echo F|xcopy /Y "$(TargetDir)XiboClient.exe.config" "$(TargetDir)XCDSClient.exe.config"
+echo F|xcopy /Y "$(TargetDir)XiboClient.pdb" "$(TargetDir)XCDSClient.pdb"
+echo F|xcopy /Y "$(TargetPath)" "$(TargetDir)XCDS.scr"
+echo F|xcopy /Y "$(TargetDir)XiboClient.exe.config" "$(TargetDir)XCDS.scr.config"</PostBuildEvent>
   </PropertyGroup>
 </Project>

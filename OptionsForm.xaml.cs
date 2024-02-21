@@ -198,7 +198,7 @@ namespace XiboClient
                 ApplicationSettings.Default.HardwareKey = textBoxHardwareKey.Text;
 
                 // Also tweak the address of the xmds1
-                this.xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=registerDisplay";
+                this.xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=registerDisplay";
 
                 // Proxy Settings
                 ApplicationSettings.Default.ProxyUser = textBoxProxyUser.Text;
@@ -401,7 +401,7 @@ namespace XiboClient
                 try
                 {
                     // Assert the XMDS url
-                    this.xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=registerDisplay";
+                    this.xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=registerDisplay";
 
                     var response = this.xmds.RegisterDisplay(
                         ApplicationSettings.Default.ServerKey,
