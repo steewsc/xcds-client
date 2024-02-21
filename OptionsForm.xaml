@@ -6,15 +6,17 @@
         xmlns:local="clr-namespace:XiboClient"
         xmlns:Properties="clr-namespace:XiboClient.Properties" x:Class="XiboClient.OptionsForm"
         mc:Ignorable="d"
-        Title="Player Options" Height="450" Width="800" ResizeMode="CanMinimize">
+        Title="Player Options" Height="500" Width="800" ResizeMode="CanMinimize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="185*"/>
-            <ColumnDefinition Width="607*"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="565*"/>
         </Grid.ColumnDefinitions>
-        <TabControl HorizontalAlignment="Left" Height="327" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="2">
+        <TabControl HorizontalAlignment="Left" Height="357" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="4">
             <TabItem Header="Connect">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,90">
+                <Grid Background="#00E5E5E5" Height="337">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="91*"/>
                         <ColumnDefinition Width="675*"/>
@@ -56,15 +58,15 @@
                     <Label x:Name="labelPlayerVersion" Content="" HorizontalAlignment="Left" Margin="636,112,0,0" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
-
         </TabControl>
-        <TextBox x:Name="textBoxStatus" Grid.ColumnSpan="2" Margin="24,250,27,97" BorderThickness="0"/>
-        <Button x:Name="buttonConnect" Content="Connect" HorizontalAlignment="Left" Margin="10,342,0,0" VerticalAlignment="Top" Width="272" Height="67" IsDefault="True" Cursor="Hand" AutomationProperties.HelpText="Connect to your CMS using the details on the Connect Tab" Click="Button_Connect_Click" Grid.ColumnSpan="2"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="476.671,342,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="1" Click="Button_Exit_Click"/>
-        <Button Content="Display Admin" HorizontalAlignment="Left" Margin="352,342,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="1" Click="Button_DisplayAdmin_Click"/>
-        <Button x:Name="buttonLaunchPlayer" Content="Launch Player" HorizontalAlignment="Left" Margin="227,342,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="1" Click="Button_LaunchPlayer_Click"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="-220,344,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonUseCode" Content="Use Code" HorizontalAlignment="Left" Margin="102,342,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="1" Click="Button_UseCode_Click"/>
+        <TextBox Background="#FFE2FFC5" VerticalScrollBarVisibility="Auto" x:Name="textBoxStatus" Grid.ColumnSpan="4" Margin="24,250,27,120" BorderThickness="0"/>
+        <Button x:Name="buttonConnect" Content="Connect" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="272" Height="67" IsDefault="True" Cursor="Hand" AutomationProperties.HelpText="Connect to your CMS using the details on the Connect Tab" Click="Button_Connect_Click" Grid.ColumnSpan="4"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="429,372,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="3" Click="Button_Exit_Click"/>
+        <Button Content="Display Admin" HorizontalAlignment="Left" Margin="304,372,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="3" Click="Button_DisplayAdmin_Click"/>
+        <Button x:Name="buttonLaunchPlayer" Content="Launch Player" HorizontalAlignment="Left" Margin="179,372,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="3" Click="Button_LaunchPlayer_Click"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="-220,374,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="buttonUseCode" Content="Use Code" HorizontalAlignment="Left" Margin="54,372,0,0" VerticalAlignment="Top" Width="120" Height="67" Grid.Column="3" Click="Button_UseCode_Click"/>
+        <Button x:Name="btnClearLog" Content="Clear Log" HorizontalAlignment="Right" Margin="0,250,27,180" Width="80" IsDefault="False" Cursor="Hand" AutomationProperties.HelpText="Clear status text" Click="Button_ClearStatus_Click" Grid.Column="3" />
 
     </Grid>
 </Window>

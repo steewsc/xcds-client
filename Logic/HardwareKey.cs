@@ -112,9 +112,10 @@ namespace XiboClient
                     // Calculate the Hardware key from the CPUID and Volume Serial
                     _hardwareKey = Hashes.MD5(GetCPUId() + GetVolumeSerial(systemDriveLetter[0].ToString()) + MacAddress);
                 }
-                catch
+                catch (Exception exception)
                 {
-                    _hardwareKey = "Change for Unique Key";
+                    System.Diagnostics.Debug.WriteLine("[OUT]", $"Regenerate{exception.Message}");
+                    _hardwareKey = exception.Message + exception.StackTrace;
                 }
 
                 // Store the key
@@ -189,7 +190,9 @@ namespace XiboClient
                 {
                     if (cpuInfo == String.Empty)
                     {   // only return cpuInfo from first CPU
-                        cpuInfo = mo.Properties["ProcessorId"].Value.ToString();
+                        try {
+                            cpuInfo = mo.Properties["ProcessorId"].Value.ToString();
+                        } catch {}
                     }
                 }
 

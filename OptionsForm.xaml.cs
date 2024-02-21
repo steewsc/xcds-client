@@ -159,10 +159,16 @@ namespace XiboClient
             Close();
         }
 
+        private void Button_ClearStatus_Click(object sender, RoutedEventArgs e)
+        {
+            this.textBoxStatus.Clear();
+        }
+
         private void Button_Connect_Click(object sender, RoutedEventArgs e)
         {
             // State
-            this.textBoxStatus.Clear();
+            // this.textBoxStatus.Clear();
+            _logMessage("Starting connection...");
             this.buttonConnect.IsEnabled = false;
             this.IsAuthCodeProcessing = false;
             this.buttonUseCode.IsEnabled = true;
@@ -176,14 +182,14 @@ namespace XiboClient
             {
                 StatManager.Instance.InitDatabase();
             }
-            catch
+            catch (Exception exception)
             {
-                textBoxStatus.AppendText("There was a problem creating a local database. This will probably solve itself when the Player starts, but as a precaution you could press Connect again.");
+                _logMessage("There was a problem creating a local database. This will probably solve itself when the Player starts, but as a precaution you could press Connect again.", exception);
             }
 
             try
             {
-                textBoxStatus.AppendText("Saving with CMS... Please wait...");
+                _logMessage("Saving with CMS... Please wait...");
 
                 // Simple settings
                 ApplicationSettings.Default.ServerUri = textBoxCmsAddress.Text;
@@ -225,7 +231,7 @@ namespace XiboClient
             }
             catch (Exception ex)
             {
-                textBoxStatus.AppendText(ex.Message);
+                _logMessage("Connect Failed", ex);
             }
         }
 
@@ -238,12 +244,9 @@ namespace XiboClient
         {
             buttonConnect.IsEnabled = true;
 
-            textBoxStatus.Clear();
-
             if (e.Error != null)
             {
-                textBoxStatus.AppendText("Status" + Environment.NewLine);
-                textBoxStatus.AppendText(e.Error.Message);
+                _logMessage("Status", e.Error);
 
                 Debug.WriteLine("Error returned from Call to XMDS Register Display.", "xmds1_RegisterDisplayCompleted");
                 Debug.WriteLine(e.Error.Message, "xmds1_RegisterDisplayCompleted");
@@ -251,7 +254,7 @@ namespace XiboClient
             }
             else
             {
-                textBoxStatus.AppendText(RegisterAgent.ProcessRegisterXml(e.Result));
+                _logMessage(RegisterAgent.ProcessRegisterXml(e.Result));
             }
         }
 
@@ -315,9 +318,6 @@ namespace XiboClient
             this.buttonUseCode.IsEnabled = false;
             this.buttonLaunchPlayer.IsEnabled = false;
 
-            // Clear the text area
-            this.textBoxStatus.Clear();
-
             // Save local elements
             ApplicationSettings.Default.LibraryPath = textBoxLibraryPath.Text.TrimEnd('\\');
             ApplicationSettings.Default.HardwareKey = textBoxHardwareKey.Text;
@@ -343,7 +343,7 @@ namespace XiboClient
             }
             catch
             {
-                textBoxStatus.AppendText("There was a problem creating a local database. This will probably solve itself when the Player starts, but as a precaution you could press Use Code again.");
+                _logMessage("There was a problem creating a local database. This will probably solve itself when the Player starts, but as a precaution you could press Use Code again.");
             }
 
             // Show the code in the status window, and disable the other buttons.
@@ -354,7 +354,7 @@ namespace XiboClient
                 this.UserCode = codes["user_code"].ToString();
                 this.DeviceCode = codes["device_code"].ToString();
 
-                this.textBoxStatus.Text = this.UserCode;
+                _logMessage(this.UserCode);
                 this.textBoxStatus.FontFamily = new System.Windows.Media.FontFamily("Consolas");
                 this.textBoxStatus.FontSize = 48;
                 this.textBoxStatus.TextAlignment = TextAlignment.Center;
@@ -369,7 +369,7 @@ namespace XiboClient
             {
                 Debug.WriteLine(ex.Message, "Button_UseCode_Click");
 
-                this.textBoxStatus.Text = "Unable to get a code, please configure manually.";
+                _logMessage("Unable to get a code, please configure manually.");
                 this.buttonUseCode.IsEnabled = true;
                 this.buttonLaunchPlayer.IsEnabled = true;
                 this.IsAuthCodeProcessing = false;
@@ -431,10 +431,20 @@ namespace XiboClient
                 }
                 catch (Exception ex)
                 {
-                    this.textBoxStatus.Text = "Problem Claiming Code, please try again.";
+                    _logMessage("Problem Claiming Code, please try again.", ex);
                     Trace.WriteLine(new LogMessage("OptionsForm", "AuthCodeTimer_Elapsed: Problem claiming code: " + ex.Message), LogType.Error.ToString());
                 }
             }
+        }
+
+        private void _logMessage(string msg, Exception ex = null)
+        {
+            if (ex != null) {
+                textBoxStatus.AppendText(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+                Trace.WriteLine(new LogMessage("Exc:", ex.Message + Environment.NewLine + ex.StackTrace), LogType.Error.ToString());
+                
+            }
+            textBoxStatus.AppendText(msg + Environment.NewLine);
         }
 
         /// <summary>
