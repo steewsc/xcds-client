@@ -297,7 +297,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>XCDSClient_xmds_xmds</CachedSettingsPropName>
+      <CachedSettingsPropName>XiboClient_xmds_xmds</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>

@@ -88,7 +88,7 @@ namespace XiboClient
             _report = new xmds.xmds
             {
                 Credentials = null,
-                Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=mediaInventory",
+                Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=mediaInventory",
                 UseDefaultCredentials = false
             };
         }

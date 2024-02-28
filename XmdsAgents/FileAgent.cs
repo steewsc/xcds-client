@@ -110,7 +110,7 @@ namespace XiboClient.XmdsAgents
                     {
                         xmds.Credentials = null;
                         xmds.UseDefaultCredentials = true;
-                        xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=getResource";
+                        xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=getResource";
 
                         string result = xmds.GetResource(ApplicationSettings.Default.ServerKey, ApplicationSettings.Default.HardwareKey, _requiredFile.LayoutId, _requiredFile.RegionId, _requiredFile.MediaId);
 
@@ -173,12 +173,12 @@ namespace XiboClient.XmdsAgents
 
                             if (_requiredFile.FileType == "dependency")
                             {
-                                xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=getDepencency";
+                                xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=getDepencency";
                                 getFileReturn = xmds.GetDependency(ApplicationSettings.Default.ServerKey, _hardwareKey, _requiredFile.DependencyFileType, _requiredFile.DependencyId, _requiredFile.ChunkOffset, _requiredFile.ChunkSize);
                             }
                             else
                             {
-                                xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=getFile";
+                                xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=getFile";
                                 getFileReturn = xmds.GetFile(ApplicationSettings.Default.ServerKey, _hardwareKey, _requiredFile.Id, _requiredFile.FileType, _requiredFile.ChunkOffset, _requiredFile.ChunkSize);
                             }
                         }

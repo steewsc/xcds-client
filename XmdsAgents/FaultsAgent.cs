@@ -85,7 +85,7 @@ namespace XiboClient.XmdsAgents
                         using (xmds.xmds xmds = new xmds.xmds())
                         {
                             xmds.Credentials = null;
-                            xmds.Url = ApplicationSettings.Default.XCDSClient_xmds_xmds + "&method=reportFaults";
+                            xmds.Url = ApplicationSettings.Default.XiboClient_xmds_xmds + "&method=reportFaults";
                             xmds.UseDefaultCredentials = false;
                             xmds.ReportFaults(ApplicationSettings.Default.ServerKey, _hardwareKey, CacheManager.Instance.UnsafeListAsJsonString());
                         }

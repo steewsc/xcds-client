@@ -61,7 +61,7 @@ namespace XiboClient.xmds {
         
         /// <remarks/>
         public xmds() {
-            this.Url = global::XiboClient.Properties.Settings.Default.XCDSClient_xmds_xmds;
+            this.Url = global::XiboClient.Properties.Settings.Default.XiboClient_xmds_xmds;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

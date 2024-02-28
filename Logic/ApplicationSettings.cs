@@ -69,7 +69,7 @@ namespace XiboClient
 
             ExcludedProperties = new List<string>();
             ExcludedProperties.Add("Default");
-            ExcludedProperties.Add("XCDSClient_xmds_xmds");
+            ExcludedProperties.Add("XiboClient_xmds_xmds");
             ExcludedProperties.Add("ClientVersion");
             ExcludedProperties.Add("Version");
             ExcludedProperties.Add("ClientCodeVersion");
@@ -353,9 +353,10 @@ namespace XiboClient
 
                         lazy.Value[nodeName] = value;
                     }
-                    catch
+                    catch (Exception e)
                     {
                         Trace.WriteLine(new LogMessage("PopulateFromXml", "XML configuration for [" + node.Name + "] which this player doesn't understand."), LogType.Info.ToString());
+                        // Trace.WriteLine(new LogMessage("PopulateFromXml", e.StackTrace), LogType.Info.ToString());
                     }
                 }
             }
@@ -417,7 +418,7 @@ namespace XiboClient
         /// <summary>
         /// XMDS Url configuration
         /// </summary>
-        public string XCDSClient_xmds_xmds
+        public string XiboClient_xmds_xmds
         {
             get
             {
