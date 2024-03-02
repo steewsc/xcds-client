@@ -1007,7 +1007,10 @@ namespace XiboClient
             }
 
             // Add the current schedule actions
-            actions.AddRange(_schedule.GetActions());
+            if(_schedule != null)
+            {
+                actions.AddRange(_schedule.GetActions());
+            }
 
             return actions;
         }

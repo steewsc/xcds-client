@@ -397,7 +397,9 @@ namespace XiboClient
                 if (string.IsNullOrEmpty(_libraryPath) || _libraryPath == "DEFAULT")
                 {
                     // Get the users document space for a library
-                    _libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + GetProductNameFromAssembly() + " Library";
+                    var localAppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                    // Create a folder for your application if it doesn't exist
+                    _libraryPath = Path.Combine(localAppDataFolder, GetProductNameFromAssembly());
                 }
 
                 // Check the path exists

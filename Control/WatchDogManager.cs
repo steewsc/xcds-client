@@ -17,6 +17,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with Xibo.  If not, see <http://www.gnu.org/licenses/>.
  */
+using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -55,6 +56,24 @@ namespace XiboClient.Control
                 {
                     Trace.WriteLine(new LogMessage("WatchDogManager - Start", "Unable to start: " + e.Message), LogType.Error.ToString());
                 }
+            }
+
+            AddApplicationToStartup(Path.GetFileName(executablePath), executablePath);
+        }
+
+        static void AddApplicationToStartup(string appName, string appPath)
+        {
+            try
+            {
+                RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+                registryKey.SetValue(appName, appPath);
+
+                Trace.WriteLine("Application added to Windows startup successfully.");
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine("Error adding application to Windows startup: " + ex.Message);
             }
         }
     }
